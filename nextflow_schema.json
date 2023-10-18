@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/vonMeyennLab/nf_fetchgeo/main/nextflow_schema.json",
+    "title": "FetchGEO pipeline parameters",
+    "description": "Fetch SRA and FASTQ files from the GEO database.",
+    "type": "object",
+
+    "definitions": {
+
+        "input_output_options": {
+            "title": "Input/output options",
+            "type":  "object",
+            "fa_icon": "fas fa-terminal",
+            "description": "Provide the GEO accession numbers and the directory where to save the output data.",
+            "required": ["geo_acc", "outdir"],
+            "properties": {
+
+                "geo_acc": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "description": "Write a single or multiple GEO accession numbers separated by commas. \n\nFor example: GSE129393,GSE208727,GSE54651",
+                    "fa_icon": "fas fa-file-csv"
+                },
+
+                "outdir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "description": "The output directory where the results will be saved. Use the absolute path.",
+                    "fa_icon": "fas fa-folder-open"
+                }
+
+            }
+        },
+
+        "output_type_options": {
+            "title": "Output type options",
+            "type": "object",
+            "fa_icon": "fas fa-database",
+            "description": "Choose the types of files to download from GEO.",
+            "properties": {
+
+                "output_type": {
+                    "type": "string",
+                    "fa_icon": "fas fa-file-code",
+                    "description": "Type of data to retrieve from the GEO database.",
+                    "default": "FastQ data",
+                    "enum": ["FastQ data", "SRA data", "FastQ + SRA data", "Processed data", "SRA metadata", "Processed metadata"]
+                }
+
+            }
+        },
+
+        "processed_data_options": {
+            "title": "Processed data options",
+            "type": "object",
+            "fa_icon": "fas fa-industry",
+            "description": "Choose the data source on the GEO record to retrieve processed data.",
+            "properties": {
+
+                "data_source": {
+                    "type": "string",
+                    "fa_icon": "fas fa-file-code",
+                    "description": "Source of data on the GEO record to retrieve processed data.",
+                    "help_text": "Specifies the source of data on the GEO record to retrieve processed data, which may be attached to the collective series entity, or to individual samples. Allowable values are: samples, series or both (all). Ignored unless 'processed' flag is set.",
+                    "default": "samples",
+                    "enum": ["samples", "series", "all"]
+                }
+
+            }
+        },
+
+        "module_arguments_options": {
+            "title": "Module arguments options",
+            "type": "object",
+            "fa_icon": "fas fa-terminal",
+            "description": "Add extra arguments to the workflow modules.",
+            "properties": {
+
+                "geofetch_args": {
+                    "type": "string",
+                    "description": "geofetch arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "sradownloader_args": {
+                    "type": "string",
+                    "description": "SRAdownloader arguments.",
+                    "fa_icon": "fas fa-file-code"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/input_output_options"
+        },
+        {
+            "$ref": "#/definitions/output_type_options"
+        },
+        {
+            "$ref": "#/definitions/processed_data_options"
+        },
+        {
+            "$ref": "#/definitions/module_arguments_options"
+        }
+    ]
+}    
