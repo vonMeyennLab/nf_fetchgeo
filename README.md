@@ -5,7 +5,6 @@
 
 A Nextflow pipeline to download **FASTQ**, **SRA**, and **processed** files from the [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) database, a public functional genomics data repository supporting MIAME-compliant data submissions.
 
-<<<<<<< HEAD
 >The pipeline was created to run on the [ETH Euler cluster](https://scicomp.ethz.ch/wiki/Euler) and it relies on the server's [Lmod environment modules](https://lmod.readthedocs.io/en/latest/) and genome files. Thus, the pipeline needs to be adapted before running it in a different HPC cluster.
 
 ## Pipeline steps
@@ -61,9 +60,6 @@ Output directory where the files will be saved.
 
 ## Additional information
 The package [`sradownloader`](https://github.com/s-andrews/sradownloader) was modified to replace the FTP connection to the ENA FTP server with downloading the files using the package [`Axel`](https://github.com/axel-download-accelerator/axel). This was done because our HPC server doesn't allow to establish a connection with the FTP server. If you which to use the pipeline outside of our group, you have to replace `sradownloader_axel` with `sradownloader` in the module `sradownloader.mod.nf`.
-=======
-
->>>>>>> 4eda8b6430009331365684e0017604c73b110876
 
 ## Acknowledgements
 This pipeline was adapted from the Nextflow pipelines created by the [Babraham Institute Bioinformatics Group](https://github.com/s-andrews/nextflow_pipelines) and from the [nf-core](https://nf-co.re/) pipelines. We thank all the contributors for both projects. We also thank the [Nextflow community](https://nextflow.slack.com/join) and the [nf-core community](https://nf-co.re/join) for all the help and support.
