@@ -19,6 +19,8 @@ process GEOFETCH {
 	label 'geofetch'
 	tag "$geoaccession" // Adds name to job submission
 
+	container 'docker://josousa/geofetch:0.12.6'
+
 	input:
         val(geoaccession)
 		val(outputdir)
@@ -66,8 +68,6 @@ process GEOFETCH {
 		}
 
 		"""
-		module load geofetch
-
 		geofetch -i ${geoaccession} ${geofetch_args} --metadata-folder metadata
 		"""
 }

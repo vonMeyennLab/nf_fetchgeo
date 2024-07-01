@@ -10,6 +10,8 @@ process SRADOWNLOADER {
 	tag "$geoaccession" // Adds name to job submission
     label 'sradownloader'
 
+	container 'docker://josousa/sradownloader:3.11'
+	
 	input:
 	  	file(sra_metadata)
         val(geoaccession)
@@ -22,8 +24,6 @@ process SRADOWNLOADER {
 
 	script:
 		"""
-		module load sradownloader/3.8
-
-		sradownloader_axel ${sradownloader_args} ${sra_metadata}
+		sradownloader ${sradownloader_args} ${sra_metadata}
 		"""
 }
