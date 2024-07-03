@@ -6,7 +6,12 @@ nextflow.enable.dsl=2
     INPUT
 ======================================================================================== */
 params.geo_acc = null
-geoaccession   = Channel.of(params.geo_acc).splitCsv().flatten()
+
+if (!params.geo_acc) {
+    error "GEO accession not provided. Please provide a GEO accession using the --geo_acc parameter."
+}
+
+geoaccession = Channel.of(params.geo_acc).splitCsv().flatten()
 
 
 /* ========================================================================================
