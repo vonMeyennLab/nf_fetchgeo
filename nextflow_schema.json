@@ -86,6 +86,7 @@
                 "sradownloader_args": {
                     "type": "string",
                     "description": "SRAdownloader arguments.",
+                    "default": "--wget",
                     "fa_icon": "fas fa-file-code"
                 }
             }
