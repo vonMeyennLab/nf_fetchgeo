@@ -24,6 +24,6 @@ process SRADOWNLOADER {
 
 	script:
 		"""
-		sradownloader --axel ${sradownloader_args} ${sra_metadata}
+		sradownloader ${sradownloader_args} ${sra_metadata}
 		"""
 }
