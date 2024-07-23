@@ -94,7 +94,7 @@ params.data_source        = 'samples'
 // [Default: samples]
 
 params.geofetch_args      = ''
-params.sradownloader_args = ''
+params.sradownloader_args = '--wget'
 
 /* ========================================================================================
     WORKFLOW
