@@ -12,14 +12,12 @@ A Nextflow pipeline to download **FASTQ**, **SRA**, and **processed** files from
 ## Required parameters
 
 A single or multiple GEO accession numbers separated by commas.
-`--geo_acc`
 
 ```bash
 --geo_acc 'GSE129393,GSE208727,GSE54651'
 ```
 
 Output directory where the files will be saved.
-`--outdir`
 
 ``` bash
 --outdir /cluster/work/nme/data/josousa/project
@@ -27,7 +25,6 @@ Output directory where the files will be saved.
 
 ## Optional parameters
 - Option to choose the file types to download from the GEO database.
-`--output_type`
 
     ``` bash
     --output_type 'FastQ data' # Default
@@ -39,7 +36,6 @@ Output directory where the files will be saved.
     ```
 
 - Option to specify the source of data on the GEO record to retrieve processed data.
-`--data_source`
 
     ``` bash
     --data_source 'samples' # Default
@@ -51,10 +47,12 @@ Output directory where the files will be saved.
 
 ## Extra arguments
 - Option to add extra arguments to the package [geofetch](https://geofetch.databio.org/en/latest/).
-`--geofetch_args`
+
+    `--geofetch_args`
 
 - Option to add extra arguments to the package [sradownloader](https://github.com/s-andrews/sradownloader).
-`--sradownloader_args`
+
+    `--sradownloader_args`
 
 ## Downloading Options
 The [`sradownloader`](https://github.com/s-andrews/sradownloader) package has been enhanced to support downloading files using the [`Axel`](https://github.com/axel-download-accelerator/axel) download accelerator, [`wget`](https://www.gnu.org/software/wget), or FTP. This modification allows for faster and more flexible file downloads from the SRA database.

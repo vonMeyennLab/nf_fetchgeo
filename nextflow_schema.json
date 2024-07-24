@@ -19,7 +19,7 @@
                     "type": "string",
                     "format": "file-path",
                     "mimetype": "text/plain",
-                    "description": "Write a single or multiple GEO accession numbers separated by commas. \n\nFor example: GSE129393,GSE208727,GSE54651",
+                    "description": "Write a single or multiple GEO accession numbers separated by commas.\nExample: GSE129393,GSE208727,GSE54651",
                     "fa_icon": "fas fa-file-csv"
                 },
 
