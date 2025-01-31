@@ -1,7 +1,6 @@
 # Gene Expression Omnibus (GEO) database download Pipeline
 
 <img width="30%" src="https://raw.githubusercontent.com/nextflow-io/trademark/master/nextflow-logo-bg-light.png" />
-<img width="30%" src="https://tower.nf/assets/nf-tower-black.svg" />
 
 A Nextflow pipeline to download **FASTQ**, **SRA**, and **processed** files from the [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) database, a public functional genomics data repository supporting MIAME-compliant data submissions.
 
