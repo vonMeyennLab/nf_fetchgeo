@@ -13,13 +13,13 @@ process SRADOWNLOADER {
 	container 'docker://josousa/sradownloader-axel:3.11'
 	
 	input:
-	  	file(sra_metadata)
+		file(sra_metadata)
         val(geoaccession)
 		val(outputdir)
 		val(sradownloader_args)
 
 	output:
-	  	path "*gz", emit: fastq
+		path "*gz", emit: fastq
 		publishDir "$outputdir/fastq/$geoaccession", mode: "link", overwrite: true
 
 	script:
